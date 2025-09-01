@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}BBOLM{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .nav {
+            background: #f5f5f5;
+            padding: 16px;
+            border-bottom: 1px solid #eee;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #1a237e;
+            margin-right: 18px;
+            font-weight: bold;
+        }
+        .nav a:hover {
+            color: #3949ab;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'submit_prayer_request' %}">Submit Prayer Request</a>
+        <a href="{% url 'public_prayer_list' %}">View Prayer Requests</a>
+        <a href="{% url 'opportunities_list' %}">Volunteers</a>
+        <a href="{% url 'events_calendar' %}">Events</a>
+        <a href="https://www.bbolm.com/about-5" target="_blank">Give Online</a>
+        <a href="{% url 'subscribe' %}">Subscribe to Daily Scripture</a>
+        <a href="{% url 'unsubscribe' %}">Unsubscribe</a>
+        <a href="https://global.gotomeeting.com/join/203878837" target="_blank">Watch Live</a>
+
+        <!-- Add more tabs for each app as you build! -->
+    </div>
+    <div style="padding: 24px;">
+        {% block content %}
+        <!-- page-specific content goes here -->
+        {% endblock %}
+    </div>
+</body>
+</html>

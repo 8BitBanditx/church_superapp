@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{% url 'home' %}">Home</a> |
+<a href="{% url 'submit_prayer_request' %}">Submit a Prayer Request</a>
+<hr>
+<style>
+    a { margin-right: 10px; text-decoration: none; color: #007bff; }
+    a:hover { text-decoration: underline; }
+    hr { margin-bottom: 20px; }
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Public Prayer Requests</title>
+</head>
+<body>
+    <h1>Public Prayer Requests</h1>
+    {% if public_requests %}
+        <ul>
+        {% for request in public_requests %}
+            <li>
+                <strong>{{ request.name }}</strong>:
+                {{ request.request }}<br>
+                <small>Submitted: {{ request.date_submitted|date:"M d, Y H:i" }}</small>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No public prayer requests yet.</p>
+    {% endif %}
+    <hr>
+    <a href="{% url 'submit_prayer_request' %}">Submit a Prayer Request</a>
+</body>
+</html>
+<p>
+    <a href="{% url 'submit_prayer_request' %}">Submit a Prayer Request</a>
+</p>
+{% endblock %}

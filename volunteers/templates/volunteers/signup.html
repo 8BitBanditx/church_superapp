@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Volunteer Sign-Up – BBOLM</h2>
+<p>Thank you for choosing to serve! Please fill out your details below. We'll connect you with the right team.</p>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+</form>
+{% endblock %}

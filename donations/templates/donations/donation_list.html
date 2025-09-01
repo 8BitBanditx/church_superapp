@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Donations</h2>
+<a href="{% url 'donation_add' %}">Add Donation</a> |
+<a href="{% url 'online_giving' %}">Give Online</a>
+<ul>
+  {% for donation in donations %}
+    <li>{{ donation.donor_name }} gave ${{ donation.amount }} via {{ donation.get_method_display }} on {{ donation.date }}</li>
+  {% empty %}
+    <li>No donations yet!</li>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{% url 'home' %}">Home</a> |
+<a href="{% url 'public_prayer_list' %}">View Prayer Requests</a>
+<hr>
+<style>
+    a { margin-right: 10px; text-decoration: none; color: #007bff; }
+    a:hover { text-decoration: underline; }
+    hr { margin-bottom: 20px; }
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit a Prayer Request</title>
+</head>
+<body>
+    <h1>Submit a Prayer Request</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+<p>
+    <a href="{% url 'public_prayer_list' %}">View Public Prayer Requests</a>
+</p>
+{% endblock %}

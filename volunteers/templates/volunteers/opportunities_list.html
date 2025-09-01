@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Volunteer Opportunities</h1>
+<ul>
+  {% for opportunity in opportunities %}
+    <li>
+      <strong>{{ opportunity.title }}</strong><br>
+      Date: {{ opportunity.date }}<br>
+      {{ opportunity.description }}
+    </li>
+  {% empty %}
+    <li>No opportunities available at this time.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

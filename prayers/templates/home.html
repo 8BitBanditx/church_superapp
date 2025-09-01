@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{% url 'submit_prayer_request' %}">Submit a Prayer Request</a> |
+<a href="{% url 'public_prayer_list' %}">View Prayer Requests</a>
+<hr>
+<style>
+    a { margin-right: 10px; text-decoration: none; color: #007bff; }
+    a:hover { text-decoration: underline; }
+    hr { margin-bottom: 20px; }
+</style>
+
+<div class="container mt-5">
+    <h1>Welcome to Bethel Breath of Life Ministries (BBOLM)</h1>
+    <p>
+        <a href="https://www.bbolm.com/" target="_blank" style="font-size: 1rem;">
+            Visit our main website
+        </a>
+    </p>
+    <p>We're glad you're here! How can we serve and pray for you?</p>
+    <a href="{% url 'submit_prayer_request' %}" class="btn btn-primary m-2">Submit a Prayer Request</a>
+    <a href="{% url 'public_prayer_list' %}" class="btn btn-outline-secondary m-2">View Prayer Requests</a>
+</div>
+{% endblock %}
