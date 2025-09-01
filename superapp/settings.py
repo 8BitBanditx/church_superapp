@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'volunteers',
     'events',
     'donations' ,    # ... your other apps ...
-    'scripturebot',
     # <--- ADD THIS LINE!
 ]
 
