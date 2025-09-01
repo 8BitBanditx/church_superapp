@@ -9,7 +9,6 @@ urlpatterns = [
     path('events/', include('events.urls')),
     path('volunteers/', include('volunteers.urls')),
     path('donations/', include('donations.urls')),
-    path('scripturebot/', include('scripturebot.urls')),
 
 
 
