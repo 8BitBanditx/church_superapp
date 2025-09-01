@@ -9,8 +9,8 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "dev-key-change")
 DEBUG = os.getenv("DJANGO_DEBUG", "False").lower() == "true"
 
 # Hosts / CSRF from env so Render works
-ALLOWED_HOSTS = [h.strip() for h in os.getenv("DJANGO_ALLOWED_HOSTS", "").split(",") if h.strip()]
-CSRF_TRUSTED_ORIGINS = [o.strip() for o in os.getenv("CSRF_TRUSTED_ORIGINS", "").split(",") if o.strip()]
+ALLOWED_HOSTS= ['church-superapp.onrender.com']
+CSRF_TRUSTED_ORIGINS= ['https://church-superapp.onrender.com']
 
 INSTALLED_APPS = [
     "django.contrib.admin",
